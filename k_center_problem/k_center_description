@@ -1,0 +1,73 @@
+K-CENTER PROBLEM – THREE ALGORITHMIC SOLUTIONS (Python Implementation)
+----------------------------------------------------------------------
+
+This project implements and compares three algorithmic strategies for solving the classic **k-center problem** in graphs.
+
+The problem is defined as:
+  → Given a graph G = (V, E) and an integer k,
+     choose k center nodes such that the maximum shortest-path distance 
+     from any node to its nearest center is minimized.
+
+All graphs are provided in .gexf format and are stored in the "graphs/" folder.
+
+----------------------------------------------------------------------
+1. Brute-Force Algorithm
+----------------------------------------------------------------------
+
+File: brute_force_k_center.py
+
+- **Approach**: Exhaustively tries all combinations of k nodes from the graph.
+- **Goal**: Find the exact optimal solution.
+- **Time Complexity**: O(n^k), exponential in k.
+- **Limitations**: Infeasible for graphs with large n or large k. A time limit is enforced to prevent extremely long runs.
+
+Key Features:
+- Uses NetworkX's multi-source Dijkstra to compute distances.
+- Randomly selects one eligible graph from the folder (filtered by node count).
+- Prints the best center combination found and execution time.
+
+----------------------------------------------------------------------
+2. Greedy 2-Approximation Algorithm
+----------------------------------------------------------------------
+
+File: greedy_k_center.py
+
+- **Approach**: Starts from one center and iteratively adds the farthest node from the current centers.
+- **Goal**: Efficiently produce a solution with at most 2× the optimal cost.
+- **Complexity**: O(kn) with optional loop over all n nodes to improve performance.
+
+Key Features:
+- Accepts an optional `first_center`, or loops through all possible starting nodes.
+- Selects the best starting point among all trials.
+- Much faster and scalable for larger graphs compared to brute-force.
+
+----------------------------------------------------------------------
+3. Custom Local Search Heuristic
+----------------------------------------------------------------------
+
+File: custom_k_center.py
+
+- **Approach**: Combines random sampling for initial center selection with local search optimization.
+- **Goal**: Improve a randomly chosen center set by locally swapping out centers for better candidates.
+- **Type**: Heuristic / Metaheuristic.
+
+Key Features:
+- `my_k_center()`: randomly samples `k`-node sets multiple times to choose the best initial guess.
+- `k_centers_custom()`: performs hill-climbing search, replacing centers one-by-one to minimize the objective.
+- Runs within a specified time limit.
+
+----------------------------------------------------------------------
+Usage
+----------------------------------------------------------------------
+
+Each script includes an entry-point that:
+- Randomly selects a graph from "graphs/".
+- Filters based on node count.
+- Executes the corresponding algorithm with user-defined `k` and `time_limit`.
+
+These three scripts demonstrate how the same optimization problem can be approached with:
+- Exact algorithms (Brute Force),
+- Polynomial approximations (Greedy),
+- Heuristics with stochastic and local strategies (Custom).
+
+
