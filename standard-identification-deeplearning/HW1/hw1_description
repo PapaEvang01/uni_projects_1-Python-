@@ -1,0 +1,75 @@
+📘 Homework 1 – Standard Identification
+
+This folder contains a series of mini-projects related to probability theory, statistical classification, and distribution analysis implemented in Python.
+
+The homeworks focus on Bayesian classification, distance metrics, synthetic dataset generation, Gaussian parameter estimation, Mahalanobis-based classification, and Beta distributions.
+
+---
+
+🔸 Sub-Homework 1 – Bayesian Classifier with Cost-Sensitive Decision Making
+
+A 1D Bayesian classifier is implemented to distinguish between two classes (ω1 and ω2) using samples from Gaussian distributions.
+
+Key elements:
+- Gaussian samples generated with specific mean and std
+- Prior probabilities: P(ω1) = 1/4, P(ω2) = 3/4
+- Cost matrix defines penalties for misclassification
+- Posterior probabilities and expected costs are calculated per sample
+- Final classification cost is printed
+
+---
+
+🔸 Sub-Homework 2a – Discriminant Function and Distance Metrics
+
+We implemented three core tools used in statistical classification:
+- `diff()`: A Gaussian-based discriminant function
+- `euclidean()`: Standard Euclidean distance
+- `mahalanobis_distance()`: Distance accounting for class covariance
+
+These methods form the basis of many classification strategies.
+
+---
+
+🔸 Sub-Homework 2b – Synthetic Dataset Generation
+
+A synthetic dataset of 300 points (3 classes × 100 samples) is generated using multivariate Gaussian distributions. Each sample has 3 features: x1, x2, x3.
+
+The dataset is saved as `synthetic_dataset.csv` and is used in the following subtasks.
+
+---
+
+  🔸 Sub-Homework 2b (i) – Estimation of Mean and Covariance
+
+Using the dataset:
+- The class-wise mean and covariance matrix are computed
+- Done for 3 feature sets: x1, x1_x2, and all_features
+- Used later for classification
+
+---
+
+  🔸 Sub-Homework 2b (ii) – Mahalanobis Classification
+
+Each sample is classified using Mahalanobis distance:
+- No priors or cost matrix used
+- Lower distance → assigned class
+- Misclassification rate is computed
+
+Findings:
+- x1 gives high error
+- x1 + x2 improves
+- All features give best accuracy
+
+---
+
+🔸 Sub-Homework 3 – Beta Distribution Analysis
+
+Part 1: Visualization
+- Plots of Beta-like PDFs using D^1, D^5, D^10
+- Shows how distribution shape sharpens with higher D
+
+Part 2: Symbolic Computation
+- Calculates B(10, 30) using SymPy symbolic integration
+
+---
+
+
