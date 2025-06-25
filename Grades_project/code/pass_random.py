@@ -10,7 +10,6 @@ This program:
 4. Displays statistics and charts
 5. Allows user to search for their grade by ID
 
-Author: Vaggelis Paps
 """
 
 import random

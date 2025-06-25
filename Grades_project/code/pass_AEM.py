@@ -16,7 +16,6 @@ analyzes the data, and provides useful insights such as:
 
 Designed to work with grade files using either dot (.) or comma (,) as decimal separators.
 
-Author: Vaggelis Paps
 Language: Python 3.12
 Libraries: matplotlib
 

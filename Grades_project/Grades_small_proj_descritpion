@@ -1,33 +1,45 @@
+============================================================
 Who Passed the Exam – Python Grade Analyzer
+============================================================
 
-My first taste in Python programming!
+This project marks one of my first experiences with Python programming, developed during my second year of university. It showcases how Python can be used for **data analysis**, **visualization**, and **interactive querying** — all within a small, focused educational context.
+Built and tested using: **Python 3.x + PyCharm IDE**
 
-During my second year at university, one of my tasks was to build a simple program 
-that could check whether I (or other students) passed an exam based on our grades.
+------------------------------------------------------------
+🔍 Project Overview
+------------------------------------------------------------
 
-I developed and tested this project using the PyCharm IDE.
+The system consists of two scripts working together:
 
+1. **pass_AEM.py**  
+   A comprehensive grade analysis tool that:
+   - Loads real student grade data from a `.txt` file
+   - Computes key statistics: average, minimum, and maximum grades
+   - Counts how many students passed the exam
+   - Allows students to look up their personal grade via AEM (student ID)
+   - Generates visual insights (grade distribution histogram & pass/fail pie chart)
+   - Exports a list of passing students to a separate file
 
-So, I created two small programs:
+2. **generate_random_grades.py** *(formerly pass_random.py)*  
+   A helper script that simulates a dataset by:
+   - Generating random student IDs (format: 5XXXX)
+   - Assigning random grades from 0.0 to 10.0 (in 0.5 increments)
+   - Saving the output to `FAKE_GRADES.TXT` for analysis or testing
 
-1. pass_AEM.py
-   This script loads actual student IDs and their grades from a text file and:
-   - Analyzes the number of students who passed
-   - Calculates averages, min/max grades
-   - Allows the user to search for their grade using their student ID (AEM)
-   - Generates graphs (grade histogram and pass/fail chart)
-   - Saves passed students to a separate file
+------------------------------------------------------------
+📈 Features & Skills Demonstrated
+------------------------------------------------------------
 
-2. pass_random.py (or generate_random_grades.py)
-   This script generates random student IDs in the form 5XXXXX and assigns random grades
-   between 0.0 and 10.0 (in steps of 0.5). The data is saved to FAKE_GRADES.TXT and can
-   be analyzed by the main script.
+ -File handling and data parsing  
+ -Custom data generation using Python's `random` module  
+ -Statistical analysis (average, count, min/max)  
+ -Data visualization with `matplotlib`  
+ -Interactive console input and output  
+ -Modular and beginner-friendly code organization
 
-These two scripts demonstrate:
-- Basic file handling and parsing
-- Use of random numbers
-- Basic statistics
-- Data visualization with matplotlib
-- Simple user interaction
+------------------------------------------------------------
 
-It's a fun and useful introduction to Python programming and data analysis.
+------------------------------------------------------------
+
+Though simple in scope, this project taught me how to combine **real-world data**, **basic analysis**, and **user interaction** in Python. It served as a gateway into more complex programming and data-driven applications — laying the foundation for future work in analytics, automation, and machine learning.
+
