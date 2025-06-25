@@ -1,0 +1,29 @@
+🧵 Panorama Stitching with SIFT — Image Processing Project
+
+📌 Task:
+This project performs panorama stitching using four input images (rio-01.png to rio-04.png). 
+The goal is to automatically detect keypoints, match them between image pairs, estimate homographies, 
+and blend the images into a seamless panoramic view.
+
+🔍 Algorithm Used:
+We use the SIFT (Scale-Invariant Feature Transform) algorithm for keypoint detection and descriptor extraction. 
+SIFT is robust to scale, rotation, and illumination changes, making it ideal for panorama construction. 
+Instead of OpenCV's built-in matchers, this project implements manual brute-force matching with a cross-check filter for reliable point correspondences.
+
+🖼️ Input:
+rio-01.png, rio-02.png, rio-03.png, rio-04.png
+
+These are stitched in two stages:
+Pair 1–2 and Pair 3–4 are stitched separately
+
+The two resulting half-panoramas are merged into the final panorama
+
+📤 Output:
+Multiple intermediate images showing detected keypoints and pairwise matches
+Final stitched panorama saved as panorama_sift_final.png
+All visualizations displayed using OpenCV windows
+
+🛠️ Environment:
+Developed using Python 3.x and OpenCV
+IDE: PyCharm
+No external matchers or stitching libraries used — everything is custom-built
