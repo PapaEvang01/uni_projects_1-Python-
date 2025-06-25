@@ -1,1 +1,105 @@
+============================================================
+Image Processing & Computer Vision Projects in Python
+============================================================
+
+This collection showcases a series of applied projects in image processing and computer vision, written entirely in Python.
+Each project emphasizes a different core concept—ranging from traditional filtering and detection 
+to deep learning-based classification and feature-based stitching.
+
+Libraries used include:
+- OpenCV
+- NumPy
+- Matplotlib
+- TensorFlow / Keras (for CNN-based classification)
+
+All code was developed as part of self-study and academic work using PyCharm and Jupyter Notebook.
+
+------------------------------------------------------------
+ 1. Cell Detection in Noisy Microscopy Images
+------------------------------------------------------------
+Performs automatic detection and statistical analysis of cells in grayscale images corrupted with salt-and-pepper noise.
+
+✅ Key Techniques:
+- Median filtering
+- Morphological operations
+- Adaptive thresholding and segmentation
+- Connected component labeling
+- Bounding box drawing
+- Extraction of area and mean intensity
+
+📂 Structure:
+- `original/` – Clean images
+- `noise/` – Noisy inputs
+- `celldetector.py` – Main detection script
+
+------------------------------------------------------------
+ 2. Traffic Sign Classification – CNN vs. ResNet50
+------------------------------------------------------------
+Compares two deep learning models on a small subset of the Belgian Traffic Sign Dataset (5 classes, ~50 test samples):
+
+1. **Custom CNN**: A compact Conv2D-based model trained from scratch  
+2. **Transfer Learning**: ResNet50 with frozen base and custom head
+
+📈 Results:
+| Model              | Accuracy | Loss  | Notes                    |
+|--------------------|----------|-------|--------------------------|
+| Custom CNN         | 96.15%   | 0.18  | Best performance overall |
+| ResNet50 (Frozen)  | 59.62%   | 0.97  | Underfitting observed    |
+
+📁 Includes:
+- Full training/evaluation pipeline
+- Visualization of predictions
+- Confusion matrix and metrics
+
+------------------------------------------------------------
+ 3. Multi-Class Image Classification using BoVW, k-NN & SVM
+------------------------------------------------------------
+Implements a Bag-of-Visual-Words pipeline to classify images into 5 classes from the Caltech dataset.
+
+📌 Pipeline Overview:
+- SIFT feature extraction
+- K-Means clustering for vocabulary
+- BOW histogram generation
+- Classification using:
+  • Custom k-NN (from scratch)
+  • One-vs-All SVM (OpenCV)
+
+🧪 Evaluation:
+- Overall and per-class accuracy
+- Confusion matrices
+- Shared feature space for fairness
+
+📂 Key Files:
+- `BOVW.py`, `k-NN.py`, `SVM.train.py`, `compare.py`
+- `/results/`, `/data/`, `/code/`
+
+------------------------------------------------------------
+ 4. Panorama Stitching with SIFT 
+------------------------------------------------------------
+Stitches four images (rio-01 to rio-04) into a wide-view panorama using feature-based techniques.
+
+🔍 Methodology:
+- SIFT keypoint detection
+- Brute-force descriptor matching with cross-check filtering
+- Homography estimation
+- Image warping and blending
+
+📈 Output:
+- Intermediate match visualizations
+- Final panorama (`panorama_sift_final.png`)
+- All visuals shown via OpenCV windows
+
+! No OpenCV matchers or `cv2.Stitcher` used — fully custom implementation
+
+------------------------------------------------------------
+📌 Summary of Skills Demonstrated
+------------------------------------------------------------
+- Classical image processing (filtering, segmentation)
+- Feature engineering (SIFT, BoVW)
+- Manual descriptor matching
+- Deep learning for image classification
+- Evaluation metrics and visualization
+- Clean modular Python code for experimentation
+
+All projects reflect my enthusiasm for combining **theory with hands-on application** in computer vision.
 
