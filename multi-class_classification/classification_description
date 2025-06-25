@@ -1,0 +1,74 @@
+==================================================================
+Multi-Class Image Classification using BOVW, k-NN and SVM (Python)
+==================================================================
+
+Description:
+------------
+This project implements a multi-class image classification system using Python and OpenCV.
+We use a subset of the Caltech dataset (5 classes only) due to its size. Each class contains 
+training and testing images for evaluation.
+
+The classification task is carried out using the Bag-of-Visual-Words (BOVW) model with two classifiers:
+1. A custom implementation of the k-Nearest Neighbors (k-NN) algorithm (without OpenCV’s built-in KNN).
+2. A one-vs-all SVM model trained with OpenCV's machine learning module.
+
+Pipeline:
+---------
+The system follows these main steps:
+
+1. **Visual Vocabulary Creation (BOVW.py):**
+   - Extracts local features using SIFT from all training images.
+   - Clusters descriptors using K-Means to build the visual vocabulary (codebook).
+
+2. **Feature Representation:**
+   - Each image is represented as a histogram of visual words (BOW descriptor) using the vocabulary.
+
+3. **Classification:**
+   - `k-NN.py`: Implements a custom k-NN classifier that compares query images against training descriptors using Euclidean distance.
+   - `SVM.train.py` and `SVM.test.py`: Train one SVM per class (one-vs-all) and evaluate predictions on test data.
+
+4. **Evaluation (compare.py):**
+   - Both classifiers are evaluated on the same test set.
+   - Accuracy is computed overall and per class.
+   - A confusion matrix is visualized for both classifiers.
+
+File Structure:
+---------------
+/code
+│
+├─ BOVW.py             → Builds vocabulary + computes descriptors
+├─ k-NN.py             → Custom k-NN implementation + evaluation
+├─ SVM.train.py        → Trains the SVM model
+├─ SVM.test.py         → Predicts labels using the trained SVM
+├─ compare.py          → Compares k-NN and SVM (confusion matrix + accuracy)
+
+/results
+│
+├─ Confusion matrices for both classifiers
+├─ Accuracy results (overall + per class)
+├─ Print logs from evaluations
+
+/data
+│
+├─ index.npy           → BOW descriptors of training images
+├─ paths.npy           → File paths of training images (used for labels)
+├─ vocabulary.npy      → Visual vocabulary (shared between both classifiers)
+├─ svm                 → Trained SVM model (OpenCV format)
+├─ classes
+
+Classes:
+--------
+The dataset contains 5 classes labeled as:
+
+0 - Motorbikes  
+1 - School Bus  
+2 - Touring Bike  
+3 - Airplanes  
+4 - Car Side
+
+Notes:
+------
+- You can tune the size of the vocabulary (number of visual words) in `BOVW.py`.
+- The number of neighbors `k` in k-NN can be changed and optimized in `k-NN.py`.
+- All classifiers use the same feature representations for fairness.
+
