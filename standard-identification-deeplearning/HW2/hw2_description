@@ -5,28 +5,22 @@ It includes 4 parts focused on dataset handling, density estimation, and decisio
 
 (I) Dataset Parsing and Visualization
 
-Loads a labeled 2D dataset from a .txt file (features x1, x2 and class label).
-
-Visualizes the data using a 2D scatter plot.
-
-Also parses the file manually into x1_values, x2_values, and class_labels for later use.
+-Loads a labeled 2D dataset from a .txt file (features x1, x2 and class label).
+-Visualizes the data using a 2D scatter plot.
+-Also parses the file manually into x1_values, x2_values, and class_labels for later use.
 
 (II) Parzen Window Density Estimation
 
-Estimates probability densities for each class using a Gaussian kernel.
-
-Visualizes the result in 3D (Part 1: scatter, Part 2: surface plots).
-
-Compares different bandwidths (h = 0.1, 0.3, 0.7).
+-Estimates probability densities for each class using a Gaussian kernel.
+-Visualizes the result in 3D (Part 1: scatter, Part 2: surface plots).
+-Compares different bandwidths (h = 0.1, 0.3, 0.7).
 
 (III) k-NN Density Estimation
 
-Uses k-Nearest Neighbors to estimate density (Part 1: per-point, Part 2: grid surface).
-
-Plots results in 3D to show effect of different k values (3, 10, 30).
+-Uses k-Nearest Neighbors to estimate density (Part 1: per-point, Part 2: grid surface).
+-Plots results in 3D to show effect of different k values (3, 10, 30).
 
 (IV) Naive Bayes + Parzen Contours
 
-Trains a Gaussian Naive Bayes classifier.
-
-Plots decision boundaries and overlays Parzen density contours for class ω₁.
+-Trains a Gaussian Naive Bayes classifier.
+-Plots decision boundaries and overlays Parzen density contours for class ω₁.
