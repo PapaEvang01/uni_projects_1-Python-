@@ -1,6 +1,6 @@
 """
 ===============================================================
-🧫 Cell Detection and Analysis from Noisy Microscopy Images 🧫
+ Cell Detection and Analysis from Noisy Microscopy Images 
 ===============================================================
 
 This Python script performs automatic detection and analysis of cells
@@ -24,14 +24,16 @@ in grayscale images that have been corrupted by salt-and-pepper noise.
 - original/ → folder with clean original images
 - noise/    → folder with salt-and-pepper noisy versions (same filenames)
 
-👨‍💻 Dependencies:
+ Dependencies:
 - OpenCV (cv2)
 - NumPy
 - Random
 - OS
 
 Coursework: [e.g., Digital Image Processing - University Project]
+
 """
+
 import cv2
 import numpy as np
 import os
