@@ -1,0 +1,68 @@
+RNA Secondary Structure – Dynamic Programming (University Project)
+==================================================================
+
+This project was written in Python using PyCharm during my university days.
+
+It implements a classical Dynamic Programming algorithm to predict the secondary
+structure of a given RNA sequence, based on valid biological base pairing rules 
+and structural constraints.
+
+Project Overview:
+-----------------
+The project contains a single .py file that:
+- Accepts an RNA sequence as input
+- Computes the optimal set of non-crossing base pairs
+- Outputs the secondary structure in dot-bracket notation
+
+Secondary Structure Rules:
+--------------------------
+1. No sharp turns:
+   If (i, j) is a base pair, then j - i ≥ 4
+
+2. Valid pairs:
+   Allowed pairings include A-U, C-G, and wobble G-U
+
+3. Matching constraint:
+   Each base may participate in at most one pairing
+
+4. Non-crossing condition:
+   If (i, j) and (k, l) are both in the structure,
+   they must not overlap (i < k < j < l is invalid)
+
+Dynamic Programming Algorithm:
+------------------------------
+Based on Nussinov-style recurrence (Kleinberg & Tardos - Section 6.5):
+
+Initialize OPT(i,j) = 0 for all i ≥ j - 4
+
+for k = 5 to n-1:
+    for i = 1 to n-k:
+        j = i + k
+        OPT(i,j) = max(
+            OPT(i,j-1),
+            max over t in [i, j-5] where (t,j) is valid:
+                1 + OPT(i,t-1) + OPT(t+1,j-1)
+        )
+
+Return OPT(0, n-1)
+
+Test Sequences and Outputs:
+---------------------------
+Input RNA Sequences:
+
+1. 'ACCGGUAGU'
+2. 'AUGGCCAUUGUAAUGGGCCGCUGA'
+3. 'ACGUCGAUUCGAGCGAAUCGUAACGAUACGAGCAUAGCGGCUAGAC'
+
+Dot-Bracket Notations:
+
+1. '((.....))'
+2. '.(((((((....)).))))....)'
+3. '..(((..(...((((.((((((....))))...))..).)))))))'
+
+Output Format:
+--------------
+The program returns the dot-bracket notation:
+
+  ( and )  -> base pairs
+  .        -> unpaired base
