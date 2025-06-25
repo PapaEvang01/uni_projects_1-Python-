@@ -1,0 +1,26 @@
+# 🧫 Cell Detection Project
+
+This project performs automatic detection and analysis of cells in noisy microscopy images using OpenCV.
+
+## 🔍 Features
+- Manual median filtering
+- Morphological noise removal
+- Thresholding and segmentation
+- Connected component analysis
+- Bounding box annotation
+- Area and intensity stats
+
+## 📂 Folder Structure
+- `original/` - Clean cell images
+- `noise/` - Salt-and-pepper noisy images
+- `celldetector.py` - Main script
+
+## 🛠️ Requirements
+- Python 3.x
+- OpenCV (`pip install opencv-python`)
+- NumPy
+
+## 🖼️ Example Output
+The script displays annotated cell detections with bounding boxes and statistics.
+
+---
