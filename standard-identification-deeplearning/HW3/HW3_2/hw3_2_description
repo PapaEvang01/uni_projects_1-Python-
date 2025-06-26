@@ -1,0 +1,31 @@
+SubHW3-2: Hierarchical Clustering and Evaluation on the Seeds Dataset
+
+This sub-assignment is part of HW3 from the course Standard Identification with Deep Learning. 
+  It explores hierarchical clustering techniques and evaluates their performance on the multivariate wheat seed dataset.
+
+A) Hierarchical Clustering with Ward Linkage
+
+In this part, we apply Agglomerative Hierarchical Clustering using the same wheat seed dataset from previous sub-assignments.
+
+The dataset is loaded into a pandas.DataFrame, and only the feature columns are used (excluding the class labels).
+We use AgglomerativeClustering from scikit-learn with:
+
+n_clusters = 3 (target number of clusters)
+linkage = 'ward' (minimizes within-cluster variance)
+metric = 'euclidean' (computes distance between samples)
+
+The model recursively merges pairs of data points or clusters that are most similar based on Euclidean distance and Ward linkage until three clusters are formed. The predicted cluster labels can later be visualized or evaluated.
+
+B) Dendrogram Visualization using Ward Linkage
+
+This section visualizes the hierarchical clustering process using a dendrogram constructed with scipy's linkage() and dendrogram() functions.
+The Ward linkage method with Euclidean distance is used to build the hierarchical tree.
+The dendrogram shows how clusters are merged at each step and helps assess the optimal number of clusters visually.
+
+C) Clustering Evaluation using Adjusted Rand Index
+
+Finally, the quality of the clustering is assessed using the Adjusted Rand Index (ARI) from sklearn.metrics.
+The true class labels (y) are compared against the cluster assignments obtained from the hierarchical model.
+The ARI score quantifies similarity between the two labelings while correcting for chance groupings.
+
+A score close to 1.0 indicates that the clustering structure aligns well with the ground truth classes.
