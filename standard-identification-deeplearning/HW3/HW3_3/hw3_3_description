@@ -1,1 +1,64 @@
+SubHW3-3: Dimensionality Reduction with PCA & LDA
 
+This sub-assignment is part of HW3 from the course Standard Identification with Deep Learning. 
+It focuses on dimensionality reduction techniques using Principal Component Analysis (PCA) and Linear Discriminant Analysis (LDA)
+applied to the wheat seeds dataset. 
+
+The goal is to explore how these techniques help reduce feature space while preserving useful information for classification and visualization.
+
+A) Variance Retention Analysis with PCA
+
+The wheat seeds dataset is first loaded and preprocessed by removing the class labels.
+PCA is applied to the data to compute the principal components.
+The cumulative explained variance ratio is calculated to determine how many components 
+are needed to retain 90% and 99% of the total dataset variance.
+This step identifies the minimum number of components that capture most of the data’s structure, 
+optimizing dimensionality reduction without significant information loss.
+
+B) 2D PCA Scatter Plot with Class Labels
+
+The dataset is projected into a 2D space using the top two principal components from PCA.
+A scatter plot is created to visualize the projected data points.
+Each point is color-coded by its class label, allowing us to visually assess
+how well-separated the classes are in the reduced feature space.
+
+C) PCA Reconstruction Error Evaluation
+
+We evaluate how much information is lost when reducing the dataset to a lower dimension and then reconstructing it back.
+A range of components from 1 to 7 is tested.
+
+For each n_components:
+
+-PCA is applied and the data is transformed.
+-The data is reconstructed using inverse_transform.
+-The Mean Squared Error (MSE) between the original and reconstructed data is calculated.
+-The reconstruction error is plotted against the number of components to observe how the error decreases as dimensionality increases.
+
+D) LDA: Supervised Dimensionality Reduction and Visualization
+
+Linear Discriminant Analysis (LDA) is applied using both the feature matrix X and the label vector y.
+LDA is initialized with n_components=2 to reduce dimensionality while maximizing class separation.
+The transformed data is plotted in a 2D scatter plot, where each point is color-coded by class.
+
+This provides an intuitive visualization of how well LDA separates the three wheat seed types.
+
+E) Identifying Feature Contributions to LDA Components
+
+Step 1: Coefficient Analysis
+After fitting the LDA model, we extract the component loadings (coefficients) from lda.scalings_.
+The absolute values of these coefficients indicate the contribution of each original feature to each LDA component.
+
+For each LDA component:
+
+-We identify the most contributing feature (largest absolute value).
+-We identify the least contributing feature (smallest absolute value).
+
+The results are printed to highlight which features are most influential in class discrimination.
+
+Step 2: Visualizing Informative Feature Pairs
+
+Using the feature indices found above, we generate two scatter plots:
+-First Plot: Feature at index 3 vs. Feature at index 4 (Component 1).
+-Second Plot: Feature at index 2 vs. Feature at index 5 (Component 2).
+
+Points are colored by their class label, giving insight into which feature combinations are most effective at visually separating classes.
