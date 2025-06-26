@@ -1,1 +1,23 @@
 
+This is the second part of HW2 from the course Standard Identification & Deep Learning.
+
+It contains the following parts:
+
+SubHW2-2: Multivariate Gaussian Samples and Classification
+
+- Generates 2D synthetic data for two classes using multivariate normal distributions.
+- Visualizes the data in a scatter plot to show class separation.
+
+A) Perceptron Classifier
+- Combines the samples and assigns class labels.
+- Implements a custom Perceptron class.
+- Trains using batch gradient updates and plots the decision boundary.
+- Computes training accuracy.
+
+B) SVM Classifier (Linear)
+- Uses scikit-learn’s `SVC` with a linear kernel.
+- Splits data into training and test sets.
+- Trains and evaluates the model, printing accuracy for both sets.
+- Visualizes the decision boundary on top of the scatter plot.
+
+All code is run and visualized in Jupyter Notebooks.
