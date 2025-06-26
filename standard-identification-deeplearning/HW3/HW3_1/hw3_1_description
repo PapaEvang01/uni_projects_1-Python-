@@ -1,0 +1,50 @@
+SubHW3-1:
+
+A) Dataset Loading and Exploration
+This is the first part of HW3_1 from the course Standard Identification with Deep Learning.
+It focuses on loading and exploring the seeds_dataset.txt file, which contains multivariate data related to wheat kernels.
+
+The dataset is loaded using pandas.read_csv() with whitespace as the delimiter.
+
+Column names are assigned for clarity:
+Area, Perimeter, Compactness, Kernel Length, Kernel Width, Asymmetry Coefficient, Kernel Groove Length, Class.
+
+The shape and preview of the dataset are printed to verify successful loading.
+This sets the foundation for further processing in upcoming sub-assignments.
+
+B) Distance and Similarity Matrix Calculation
+This section calculates and visualizes the pairwise distances between all data points.
+
+Two functions are defined:
+
+euclidean_distance(x, y) to compute Euclidean distance.
+cosine_similarity(x, y) to compute cosine similarity.
+
+The dataset is converted to a NumPy array.
+Distance matrices (Euclidean and Cosine) are computed for all sample pairs.
+The matrices are printed and visualized using Matplotlib.
+
+C) KMeans Clustering and Silhouette Analysis
+This part applies KMeans clustering and evaluates the quality using the Silhouette Score.
+
+KMeans is applied for k values from 2 to 10.
+
+For each clustering, the average Silhouette Score is calculated.
+
+Scores are printed and plotted to observe how cluster separation quality changes with k.
+
+This helps determine the optimal number of clusters for the data.
+
+D) Rand Index Evaluation for KMeans Clustering
+In this final part:
+
+The dataset is split into features X and labels y.
+KMeans clustering is repeated 5 times (3 clusters, fixed parameters).
+After each run, the Adjusted Rand Index is calculated by comparing predicted labels to ground truth.
+
+After 5 runs:
+
+The mean Adjusted Rand Index is computed.
+The variance is calculated to assess stability.
+This shows how consistent and accurate the clustering is across multiple executions.
+
