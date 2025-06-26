@@ -1,7 +1,7 @@
 SubHW3-2: Hierarchical Clustering and Evaluation on the Seeds Dataset
 
 This sub-assignment is part of HW3 from the course Standard Identification with Deep Learning. 
-  It explores hierarchical clustering techniques and evaluates their performance on the multivariate wheat seed dataset.
+It explores hierarchical clustering techniques and evaluates their performance on the multivariate wheat seed dataset.
 
 A) Hierarchical Clustering with Ward Linkage
 
