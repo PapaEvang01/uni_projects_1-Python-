@@ -1,1 +1,105 @@
 
+HW3 – Multivariate Analysis on Wheat Seeds Dataset
+
+During this homework, I had the opportunity to work on a classic multivariate dataset (seeds_dataset.txt) through a series of three sub-assignments.
+Each task introduced and deepened my understanding of key unsupervised and supervised machine learning techniques—specifically clustering and dimensionality reduction.
+
+All parts were executed in Python using Jupyter Notebooks and are included in this repository.
+
+📁 Dataset Used
+All tasks use the same dataset: seeds_dataset.txt, which contains 7 numerical features for 210 samples of wheat kernels from three different cultivars. The features include:
+
+Area
+Perimeter
+Compactness
+Kernel Length
+Kernel Width
+Asymmetry Coefficient
+Kernel Groove Length
+Class (label: 1, 2, or 3)
+
+✅ SubHW3-1: Clustering and Distance Metrics
+A) Dataset Loading and Exploration
+
+Loaded the dataset using pandas.read_csv() with whitespace delimiter.
+Assigned meaningful column names and verified dimensions and preview.
+
+B) Distance and Similarity Matrix Calculation
+
+Defined custom functions for Euclidean distance and Cosine similarity.
+Constructed full pairwise distance matrices and visualized them using Matplotlib.
+
+C) KMeans Clustering and Silhouette Score
+
+Applied KMeans for k = 2 to 10.
+Computed average silhouette scores to assess cluster cohesion and separation.
+Plotted silhouette scores to identify optimal k.
+
+D) Rand Index Evaluation
+
+Repeated KMeans 5 times (with k=3) and calculated the Adjusted Rand Index for each run.
+Computed the mean and variance of ARI scores to evaluate clustering stability and accuracy with respect to ground truth labels.
+
+✅ SubHW3-2: Hierarchical Clustering & Evaluation
+A) Hierarchical Clustering with Ward Linkage
+
+Applied Agglomerative Clustering using Ward linkage and Euclidean distance.
+Computed the cluster labels for n_clusters=3.
+
+B) Dendrogram Visualization
+
+Generated a dendrogram to visually represent how the hierarchical clustering merges samples step-by-step.
+Helped interpret the natural grouping of the data.
+
+C) Adjusted Rand Index for Hierarchical Clustering
+
+Compared the clustering result with the true labels using the ARI metric.
+Quantified how well the unsupervised clusters matched the actual wheat types.
+
+✅ SubHW3-3: Dimensionality Reduction (PCA & LDA)
+A) Variance Retention with PCA
+
+Computed cumulative explained variance of principal components.
+Determined how many components were required to retain 90% and 99% of the data variance.
+
+B) 2D PCA Visualization
+Projected data onto the first 2 principal components.
+
+Generated a 2D scatter plot color-coded by class label.
+Visualized how well PCA separates the classes.
+
+C) PCA Reconstruction Error
+Reconstructed the data from 1 to 7 PCA components.
+
+Calculated and plotted mean squared reconstruction error to measure information loss.
+
+D) LDA Transformation and Visualization
+Applied Linear Discriminant Analysis (LDA) using both features and class labels.
+
+Reduced data to 2D and visualized the result.
+LDA showed stronger class separation compared to PCA due to supervised nature.
+
+E) Feature Contribution in LDA
+
+Step 1:
+Analyzed the LDA coefficient matrix to determine the most and least contributing features to each component.
+
+Step 2:
+Visualized discriminative feature pairs:
+
+-Component 1: Feature index 3 vs. 4
+-Component 2: Feature index 2 vs. 5
+
+These scatter plots highlighted the power of certain features in distinguishing wheat seed types.
+
+🧠 Key Learnings
+Throughout HW3, I gained hands-on experience with foundational machine learning tools, including:
+
+-Pairwise similarity metrics (Euclidean, Cosine)
+-Unsupervised clustering (KMeans, Hierarchical)
+-Evaluation metrics like Silhouette Score and Adjusted Rand Index
+-Dimensionality reduction with PCA and LDA
+-Visualization techniques for high-dimensional data
+-Feature importance analysis in linear models
+
+These skills are highly transferable to real-world data science problems involving classification, clustering, and feature selection.
