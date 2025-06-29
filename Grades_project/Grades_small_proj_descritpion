@@ -41,5 +41,7 @@ The system consists of two scripts working together:
 
 ------------------------------------------------------------
 
-Though simple in scope, this project taught me how to combine **real-world data**, **basic analysis**, and **user interaction** in Python. It served as a gateway into more complex programming and data-driven applications — laying the foundation for future work in analytics, automation, and machine learning.
+Though simple in scope, this project taught me how to combine **real-world data**, **basic analysis**, 
+and **user interaction** in Python. It served as a gateway into more complex programming and data-driven applications — laying the foundation
+for future work in analytics, automation, and machine learning.
 
