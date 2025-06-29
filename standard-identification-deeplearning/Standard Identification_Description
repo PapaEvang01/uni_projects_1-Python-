@@ -1,0 +1,112 @@
+Standard Identification – Deep Learning Mini Projects
+======================================================
+
+This folder contains a series of Python mini-projects developed during my final-year university course titled "Standard Identification." 
+The course focused on both the mathematical foundations and the practical implementation of Deep Learning algorithms.
+
+Across four homeworks (HW1–HW4), I worked on statistical classification, clustering, density estimation, dimensionality reduction, and neural network training.
+The implementations use Python libraries like NumPy, scikit-learn, TensorFlow, and matplotlib. Each subproject is documented in a separate notebook or script.
+
+--------------------------------
+HW1 – Bayesian Classification & Distributions
+--------------------------------
+This homework introduces basic classification theory, Bayesian decision rules, distance metrics, and distribution analysis.
+
+🔹 SubHW1 – Bayesian Classifier:
+- Implements a cost-sensitive Bayesian classifier using Gaussian samples.
+- Computes posterior probabilities and expected classification cost.
+
+🔹 SubHW2a – Distance Metrics:
+- Defines discriminant, Euclidean, and Mahalanobis distance functions used in classification.
+
+🔹 SubHW2b – Synthetic Dataset:
+- Generates a synthetic 3-class dataset from multivariate Gaussians.
+- Estimates class-wise means and covariances.
+- Classifies samples using Mahalanobis distance and evaluates error rates.
+
+🔹 SubHW3 – Beta Distribution:
+- Visualizes Beta-like PDFs and computes Beta function symbolically with SymPy.
+
+--------------------------------
+HW2 – Density Estimation & Perceptron/SVM Classification
+--------------------------------
+
+🔹 SubHW2-1 – Density Estimation:
+- Parses and visualizes a 2D labeled dataset.
+- Implements Parzen Window Estimation with Gaussian kernels for various bandwidths.
+- Uses k-NN for density estimation and compares outputs.
+- Trains a Naive Bayes classifier and overlays decision contours with Parzen density estimates.
+
+🔹 SubHW2-2 – Gaussian Samples & Classifiers:
+- Generates 2D Gaussian-distributed samples for two classes.
+- Trains a custom Perceptron classifier (batch updates, decision boundary visualization).
+- Trains an SVM classifier using scikit-learn and evaluates on train/test sets.
+
+--------------------------------
+HW3 – Clustering & Dimensionality Reduction (Seeds Dataset)
+--------------------------------
+
+All sub-assignments use the same dataset (seeds_dataset.txt), which contains 210 samples of wheat kernels labeled into 3 classes,
+described by 7 morphological features.
+
+🔹 SubHW3-1 – Clustering & Similarity:
+- Computes Euclidean and Cosine distance matrices.
+- Performs KMeans clustering (k=2 to 10), evaluates Silhouette Score.
+- Computes Adjusted Rand Index over multiple runs to assess stability.
+
+🔹 SubHW3-2 – Hierarchical Clustering:
+- Applies Agglomerative Clustering with Ward linkage.
+- Visualizes clustering via dendrogram.
+- Evaluates clustering using Adjusted Rand Index.
+
+🔹 SubHW3-3 – PCA & LDA:
+- Applies PCA for variance retention and 2D visualization.
+- Evaluates reconstruction error for 1–7 PCA components.
+- Applies LDA to project data into a supervised 2D space.
+- Analyzes feature contribution per LDA component.
+- Visualizes informative feature pairs (e.g., feature index 3 vs. 4).
+
+🧠 Key Concepts:
+- Similarity metrics
+- KMeans and Hierarchical clustering
+- Silhouette Score & ARI
+- PCA (unsupervised) and LDA (supervised)
+- Feature contribution & visualization
+
+--------------------------------
+HW4 – Neural Network Classification (Iris Dataset)
+--------------------------------
+
+Uses the classic Iris dataset (150 samples, 4 features, 3 classes).
+
+🔹 Part A – Dataset Splitting:
+- 80/20 train-test split using scikit-learn.
+
+🔹 Part B – Preprocessing:
+- Label encoding of class names to numeric labels.
+- Feature standardization (mean = 0, std = 1).
+
+🔹 Part C – Neural Network (Sigmoid):
+- 2-layer NN with 30 sigmoid neurons in hidden layer.
+- Output layer with softmax for multiclass classification.
+- Trained with Adam optimizer, 30 epochs, batch size 32.
+
+🔹 Part D – Evaluation:
+- Plots accuracy over epochs.
+- Computes confusion matrix on test data.
+
+🔹 Part E – Neural Network (ReLU):
+- Retrains the same network with ReLU activation.
+
+🔹 Part F – Model Comparison:
+- Compares test accuracy, accuracy plots, and confusion matrices between Sigmoid and ReLU models.
+
+--------------------------------
+
+🗂️ Folder Structure:
+- Each homework folder (HW1, HW2, HW3, HW4) contains:
+  - Jupyter Notebooks (.ipynb) or Python scripts
+  - Supporting datasets or generated files
+  - A short description.txt of the assignment
+
+This project collection reflects my learning progress in statistical and neural network-based classification, and my ability to implement and analyze machine learning workflows from scratch.
