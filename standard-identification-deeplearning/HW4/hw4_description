@@ -1,1 +1,70 @@
+HW4 - Standard Identification with Deep Learning
+================================================
 
+In this assignment, we work with the classic Iris dataset, which contains morphological measurements for 150 iris plants. Each sample includes four numerical features:
+
+- Sepal length (cm)
+- Sepal width (cm)
+- Petal length (cm)
+- Petal width (cm)
+
+The dataset is divided evenly into three classes:
+- ω1 → Iris Setosa
+- ω2 → Iris Versicolour
+- ω3 → Iris Virginica
+
+The files used in this assignment are loaded from Google Drive:
+- iris.data (main dataset)
+- iris.names (feature/class info)
+- bezdekIris.data, Index (reference metadata)
+
+------------------------------------------------
+Part A – Dataset Splitting (Train/Test)
+------------------------------------------------
+The dataset is randomly split into:
+- 80% training samples
+- 20% test samples
+
+------------------------------------------------
+Part B – Preprocessing
+------------------------------------------------
+We perform two preprocessing steps:
+1. Label Encoding: Converts class names to integers (0, 1, 2).
+2. Feature Standardization: Normalizes each input feature to have mean 0 and standard deviation 1 using StandardScaler.
+
+------------------------------------------------
+Part C – Neural Network Training (Sigmoid)
+------------------------------------------------
+We build a 2-layer neural network:
+- Hidden Layer: 30 neurons, sigmoid activation
+- Output Layer: 3 neurons (softmax for multiclass classification)
+
+Compiled with:
+- Optimizer: Adam
+- Loss: sparse_categorical_crossentropy
+- Trained for 30 epochs, batch size = 32
+
+Model is evaluated on the test set for accuracy.
+
+------------------------------------------------
+Part D – Evaluation & Visualization
+------------------------------------------------
+1. Plotted validation accuracy vs. epochs.
+2. Computed confusion matrix on test data to assess performance across all classes.
+
+------------------------------------------------
+Part E – Retraining with ReLU Activation
+------------------------------------------------
+We retrain the same network, but use ReLU activation in the hidden layer instead of sigmoid. All other settings remain the same.
+
+ReLU is often preferred for its faster convergence and ability to avoid vanishing gradients.
+
+------------------------------------------------
+Part F – Model Comparison: Sigmoid vs. ReLU
+------------------------------------------------
+We compare both models based on:
+1. Final test accuracy
+2. Validation accuracy over epochs (visualized)
+3. Confusion matrices
+
+This comparison helps assess the impact of activation function choice on training dynamics and classification performance.
