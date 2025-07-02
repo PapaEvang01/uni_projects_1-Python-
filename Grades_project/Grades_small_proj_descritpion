@@ -2,7 +2,8 @@
 Who Passed the Exam – Python Grade Analyzer
 ============================================================
 
-This project marks one of my first experiences with Python programming, developed during my second year of university. It showcases how Python can be used for **data analysis**, **visualization**, and **interactive querying** — all within a small, focused educational context.
+This project marks one of my first experiences with Python programming, developed during my second year of university. 
+It showcases how Python can be used for **data analysis**, **visualization**, and **interactive querying** — all within a small, focused educational context.
 Built and tested using: **Python 3.x + PyCharm IDE**
 
 ------------------------------------------------------------
@@ -36,9 +37,6 @@ The system consists of two scripts working together:
  -Data visualization with `matplotlib`  
  -Interactive console input and output  
  -Modular and beginner-friendly code organization
-
-------------------------------------------------------------
-
 ------------------------------------------------------------
 
 Though simple in scope, this project taught me how to combine **real-world data**, **basic analysis**, 
