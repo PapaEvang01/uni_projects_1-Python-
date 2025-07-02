@@ -75,7 +75,7 @@ def search_student(student_data):
     for student_id, grade in student_data:
         if student_id == query:
             found = True
-            status = "PASSED ✅" if grade >= 5 else "FAILED ❌"
+            status = "PASSED" if grade >= 5 else "FAILED ❌"
             print(f"Student ID: {student_id} | Grade: {grade:.2f} | Status: {status}")
             break
     if not found:
